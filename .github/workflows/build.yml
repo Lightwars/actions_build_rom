@@ -54,7 +54,7 @@ jobs:
   build:
     # 只允许所有者点击[start]运行
     if: github.event.repository.owner.id == github.event.sender.id
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     continue-on-error: false
 
     steps:
