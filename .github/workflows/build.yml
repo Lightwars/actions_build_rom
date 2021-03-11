@@ -340,7 +340,7 @@ jobs:
             MD5SUM=$(md5sum ${FILENAME} | cut -d' ' -f1)
             #echo $(MD5SUM) >>md5sum.txt
             sed -i "s/tmp/$MD5SUM/" md5.txt
-            curl -X POST -d 'access_token=77c248185d23821a02e78e750066b1981002c51f4c36df9697aad2fa18f3' -d 'title=MD5SUM' -d 'author_name=Eytan' -d '@md5.txt' "https://api.telegra.ph/createPage" -o test.json
+            curl -X POST -d 'access_token=77c248185d23821a02e78e750066b1981002c51f4c36df9697aad2fa18f3' -d 'title=MD5SUM' -d 'author_name=lightwars' -d '@md5.txt' "https://api.telegra.ph/createPage" -o test.json
             echo $(jq -r '.result' test.json) >>md5sum.json
             MD5SUM=$(echo $(jq -r '.url' md5sum.json))
             echo "::set-output name=filename::${FILENAME}"
@@ -418,7 +418,7 @@ jobs:
           files: ${{ steps.var.outputs.rom }}/${{ steps.build.outputs.name }}
           name: ${{ steps.build.outputs.fullname }}
           tag_name: ${{ github.run_id }}
-          body: ${{ steps.build.outputs.fullname }} built by Eytan
+          body: ${{ steps.build.outputs.fullname }} built by lightwars
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE }}
 
@@ -536,7 +536,7 @@ jobs:
             fi
             TELEGRAM_FOLDER="${HOME}"/telegram
             if ! [ -d "${TELEGRAM_FOLDER}" ]; then
-                git clone https://github.com/laityts/telegram.sh/ "${TELEGRAM_FOLDER}"
+                git clone https://github.com/lightwars/telegram.sh/ "${TELEGRAM_FOLDER}"
             fi
             TELEGRAM="${TELEGRAM_FOLDER}"/telegram
             tg_pub() {
@@ -554,7 +554,7 @@ jobs:
                     "* • Date:* ${{ steps.build.outputs.build_date }} ${{ steps.build.outputs.hms }}" \
                     "* • Size:* ${{ steps.build.outputs.size }}" \
                     "* • MD5:* [Here](${{ steps.build.outputs.md5sum }})" \
-                    "* • Changelogs:* [Here](https://raw.githubusercontent.com/laityts/ChangeLog/${{ steps.var.outputs.rom }}/changelog_${{ steps.var.outputs.target }}.txt)" \
+                    "* • Changelogs:* [Here](https://raw.githubusercontent.com/lightwars/ChangeLog/${{ steps.var.outputs.rom }}/changelog_${{ steps.var.outputs.target }}.txt)" \
                     " " \
                     "*First time installation:*" \
                     " - Download ROM from below" \
@@ -612,7 +612,7 @@ jobs:
             fi
             TELEGRAM_FOLDER="${HOME}"/telegram
             if ! [ -d "${TELEGRAM_FOLDER}" ]; then
-                git clone https://github.com/laityts/telegram.sh/ "${TELEGRAM_FOLDER}"
+                git clone https://github.com/lightwars/telegram.sh/ "${TELEGRAM_FOLDER}"
             fi
             TELEGRAM="${TELEGRAM_FOLDER}"/telegram
             tg_pub() {
