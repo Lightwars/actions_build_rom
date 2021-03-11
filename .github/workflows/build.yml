@@ -24,7 +24,7 @@ on:
        target:
          description: 'Device Code'
          required: true
-         default: 'tiffany'
+         default: 'p839f30'
        ccache:
          description: 'Ccache'
          required: true
