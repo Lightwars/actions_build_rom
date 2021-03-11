@@ -1,0 +1,32 @@
+[
+  {
+    "url":"git@github.com:lightwars/android_kernel_zte_msm8939.git",
+    "target_path":"kernel/zte/msm8939",
+    "branch":"lineage-16.0"
+  },
+  {
+    "url":"git@github.com:lightwars/android_device_zte_msm8939-common.git",
+    "target_path":"device/zte/msm8939-common",
+    "branch":"lineage-16.0"
+  },
+  {
+    "url":"git@github.com:lightwars/android_device_zte_p839f30.git",
+    "target_path":"device/zte/p839f30",
+    "branch":"lineage-16.0"
+  },
+  {
+    "url":"git@github.com:lightwars/vendor_zte.git",
+    "target_path":"vendor/zte",
+    "branch":"lineage-16.0"
+  },
+  {
+    "url":"git@github.com:lineageos/android_packages_resources_devicesettings.git",
+    "target_path":"packages/resources/devicesettings",
+    "branch":"lineage-16.0"
+  },
+  {
+    "url":"https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8.git",
+    "target_path":"prebuilts/gcc/linux-x86/arm/arm-eabi-4.8",
+    "branch":"refs/tags/android-7.1.2_r29"
+  },
+]
